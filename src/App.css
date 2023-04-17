@@ -1,27 +1,36 @@
 .App {
   text-align: center;
 }
-
-.App-logo {
-  height: 40vmin;
-  pointer-events: none;
-}
-
-@media (prefers-reduced-motion: no-preference) {
-  .App-logo {
-    animation: App-logo-spin infinite 20s linear;
-  }
-}
-
 .App-header {
+  color: #282c34;
+  text-align: left;
+  padding-left: 2em;;
+}
+.App-body {
   background-color: #282c34;
-  min-height: 100vh;
   display: flex;
+  min-height: 90vh;
   flex-direction: column;
   align-items: center;
   justify-content: center;
   font-size: calc(10px + 2vmin);
   color: white;
+}
+.Threads{
+  text-align: left;
+  padding: 0.5em;
+}
+.Thread-list{
+  list-style: none;
+  padding-left: 0;
+  height: 15em;
+  width: 20em;
+  overflow: auto;
+  padding: 0.5em;
+}
+.Thread{
+  border-bottom: 1px solid #999999;
+  padding: 0.5em 0;
 }
 
 .App-link {
