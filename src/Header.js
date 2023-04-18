@@ -1,4 +1,5 @@
-const Header = () => {
+
+function Header(){
   return(
     <header className="App-header">
       <h1>掲示板</h1>

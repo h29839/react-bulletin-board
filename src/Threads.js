@@ -1,6 +1,6 @@
 import React, {useState, useEffect} from 'react'
 
-const Threads = () => {
+function Threads(){
  //　スレッド一覧取得
  //　スレッド格納場所
  const [threadsData, setThreadsData] = useState([]);
