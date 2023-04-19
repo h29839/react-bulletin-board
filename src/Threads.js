@@ -1,8 +1,8 @@
 import React, {useState, useEffect} from 'react'
 
+/* スレッド一覧 */ 
 function Threads(){
- //　スレッド一覧取得
- //　スレッド格納場所
+ //　取得スレッド格納場所
  const [threadsData, setThreadsData] = useState([]);
 
  useEffect(()=> {
@@ -18,6 +18,8 @@ function Threads(){
     // 取得したデータをリストに保存
     setThreadsData(data);
     console.log(data);
+  }).catch(e=>{
+    window.alert("エラーが起きました");
   })
  },[]);
  return (
