@@ -1,5 +1,6 @@
 import React, { useState } from "react";
 
+/* スレッド作成 */
 function CreateThread() {
   const [show, setShow] = useState(false);
   function openModal() {
@@ -14,6 +15,7 @@ function CreateThread() {
   );
 }
 
+/* モーダル */
 function Modal({ show, setShow }) {
   function closeModal() {
     setShow(false);
@@ -32,12 +34,13 @@ function Modal({ show, setShow }) {
     return null;
   }
 }
-
+/* モーダルの中身 */
 function CreateThreadModal() {
+
   const [title, setTitle] = useState("");
 
-  function SendTitle() {
-    const header = CreateObj(title);
+  function sendTitle() {
+    const header = createHeader(title);
     fetch(
       "https://2y6i6tqn41.execute-api.ap-northeast-1.amazonaws.com/threads",
       header
@@ -51,7 +54,7 @@ function CreateThreadModal() {
       });
   }
 
-  function CreateObj(obj) {
+  function createHeader(obj) {
     // 送信するJSONの形にする
     const data = {
       title: obj,
@@ -76,7 +79,7 @@ function CreateThreadModal() {
           onChange={(e) => setTitle(e.target.value)}
         />
       </form>
-      <input type="button" value="投稿" onClick={SendTitle} />
+      <input type="button" value="投稿" onClick={sendTitle} disabled={title.length === 0} />
     </div>
   );
 }
