@@ -1,4 +1,5 @@
 import React, {useState, useEffect} from 'react'
+import {Link} from 'react-router-dom';
 
 /* スレッド一覧 */ 
 function Threads(){
@@ -28,7 +29,9 @@ function Threads(){
    <ul className='Thread-list'>
     {
      threadsData.map(thread=>
-      <li className='Thread' key={thread.id}>{thread.title}</li>
+      <li className='Thread' key={thread.id}>
+        <Link to={{pathname:'/' + thread.id, state:{thread}}}>{thread.title}</Link>
+      </li>
      )
     }
    </ul>
