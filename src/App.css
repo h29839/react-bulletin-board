@@ -32,7 +32,9 @@
   border-bottom: 1px solid #999999;
   padding: 0.5em 0;
 }
-
+.Create-Thread{
+  text-align: center;
+}
 .App-link {
   color: #61dafb;
 }

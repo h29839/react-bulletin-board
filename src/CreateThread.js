@@ -8,15 +8,15 @@ function CreateThread() {
   }
 
   return (
-    <div>
+    <div className="Create-Thread">
       <button onClick={openModal}>スレッド作成</button>
-      <Modal show={show} setShow={setShow} />
+      <Modal show={show} setShow={setShow} content={<CreateThreadContents />}/>
     </div>
   );
 }
 
 /* モーダル */
-function Modal({ show, setShow }) {
+function Modal({ show, setShow, content }) {
   function closeModal() {
     setShow(false);
   }
@@ -25,8 +25,8 @@ function Modal({ show, setShow }) {
     return (
       <div id="overlay" onClick={closeModal}>
         <div id="content" onClick={(e) => e.stopPropagation()}>
-        <button onClick={closeModal}>閉じる</button>
-          <CreateThreadModal />
+        <button className="Back-Button" onClick={closeModal}>戻る</button>
+          {content}
         </div>
       </div>
     );
@@ -35,7 +35,7 @@ function Modal({ show, setShow }) {
   }
 }
 /* モーダルの中身 */
-function CreateThreadModal() {
+function CreateThreadContents() {
 
   const [title, setTitle] = useState("");
 
@@ -49,8 +49,8 @@ function CreateThreadModal() {
       .then((data) => {
         console.log(data);
       })
-      .catch((error) => {
-        console.error("Error:", error);
+      .catch((e) => {
+        console.error("エラーが発生しました:", e);
       });
   }
 
