@@ -3,7 +3,6 @@ import { Link } from "react-router-dom";
 import CreateThread from './CreateThread';
 
 
-
 /* スレッド一覧 */ 
 function Threads(){
  //　取得スレッド格納場所

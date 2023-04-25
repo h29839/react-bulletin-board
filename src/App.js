@@ -1,19 +1,22 @@
-import { BrowserRouter as Router, Routes, Route, Link } from "react-router-dom";
 import './App.css';
-import Home from "./Home";
-import Posts from "./Posts";
+import { BrowserRouter as Router,Routes, Route} from 'react-router-dom';
+import Header from './Header';
+import Threads from './Threads';
+import Posts from './Posts';
 
 function App() {
   return (
-    <div>
-    <Router>
-      <Routes>
-        <Route path="/" element={<Home />} />
-        <Route path="/:threadId" element={<Posts />} />
-      </Routes>
-    </Router>
-    </div>
-
+      <Router>
+        <div className="App">
+          <Header />
+          <main className="App-body">
+          <Routes>
+              <Route path="/" element={<Threads />} />
+              <Route path=":threadId" element={<Posts />} />
+          </Routes>
+          </main>
+        </div>
+      </Router>
   );
 }
 

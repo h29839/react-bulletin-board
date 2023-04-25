@@ -1,5 +1,6 @@
-import { useEffect, useState } from "react";
-import { useLocation} from "react-router-dom";
+import { useEffect, useState } from 'react';
+import { useLocation} from 'react-router-dom';
+import CreatePost from './CreatePost';
 
 function Posts() {
   // スレッド内投稿格納場所
@@ -41,6 +42,7 @@ function Posts() {
           )
         }
       </ul>
+      <CreatePost />
     </div>
   );
 }

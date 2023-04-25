@@ -1,39 +1,21 @@
 import React, { useState } from "react";
+import Modal from "./Modal";
 
-/* スレッド作成 */
+/* スレッド作成コンポーネント */
 function CreateThread() {
-  const [show, setShow] = useState(false);
+  const [showThreadModal, setShowThreadModal] = useState(false);
   function openModal() {
-    setShow(true);
+    setShowThreadModal(true);
   }
 
   return (
     <div className="Create-Thread">
       <button onClick={openModal}>スレッド作成</button>
-      <Modal show={show} setShow={setShow} content={<CreateThreadContents />}/>
+      <Modal show={showThreadModal} setShow={setShowThreadModal} content={<CreateThreadContents />}/>
     </div>
   );
 }
 
-/* モーダル */
-function Modal({ show, setShow, content }) {
-  function closeModal() {
-    setShow(false);
-  }
-
-  if (show) {
-    return (
-      <div id="overlay" onClick={closeModal}>
-        <div id="content" onClick={(e) => e.stopPropagation()}>
-        <button className="Back-Button" onClick={closeModal}>戻る</button>
-          {content}
-        </div>
-      </div>
-    );
-  } else {
-    return null;
-  }
-}
 /* モーダルの中身 */
 function CreateThreadContents() {
 
@@ -79,7 +61,7 @@ function CreateThreadContents() {
           onChange={(e) => setTitle(e.target.value)}
         />
       </form>
-      <input type="button" value="投稿" onClick={sendTitle} disabled={title.length === 0} />
+      <input type="button" value="作成" onClick={sendTitle} disabled={title.length === 0} />
     </div>
   );
 }

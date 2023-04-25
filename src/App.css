@@ -16,6 +16,14 @@
   font-size: calc(10px + 2vmin);
   color: white;
 }
+a{
+  text-decoration: none;
+  color: #fff;
+}
+h1{
+  color:#282c34;
+}
+/* スレッド */
 .Threads{
   text-align: left;
   padding: 0.5em;
@@ -38,7 +46,23 @@
 .App-link {
   color: #61dafb;
 }
-
+/* 投稿 */
+.Posts{
+  text-align: left;
+  padding: 0.5em;
+}
+.Post-list{
+  list-style: none;
+  padding-left: 0;
+  height: 15em;
+  width: 20em;
+  overflow: auto;
+  padding: 0.5em;
+}
+.Post{
+  border-bottom: 1px solid #999999;
+  padding: 0.5em 0;
+}
 /* モーダル用 */
 #overlay{
   /*　画面全体を覆う設定　*/

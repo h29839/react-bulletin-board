@@ -1,35 +1,37 @@
-import React, { useState } from "react";
-import {Modal} from "/CreateThread"
-import {useParams} from "react-router-dom";
+import React, { useState } from 'react';
+import Modal from './Modal';
+import {useParams} from 'react-router-dom';
 
-/* スレッド作成コンポーネント */
+/* 投稿作成コンポーネント */
 function CreatePost() {
-  const [show, setShow] = useState(false);
+  const [showPost, setShowPost] = useState(false);
+  const threadId = useParams();
   function openModal() {
-    setShow(true);
+    setShowPost(true);
   }
 
   return (
     <div>
       <button onClick={openModal}>投稿</button>
-      <Modal show={show} setShow={setShow} content={<CreatePostContents />}/>
+      <Modal show={showPost} setShow={setShowPost} content={<CreatePostContents id={threadId} />}/>
     </div>
   );
 }
 
 /* スレッド作成の中身 */
-function CreatePostContents() {
+function CreatePostContents(props) {
 
   const [post, setPost] = useState("");
 
   function sendPost() {
     const header = createHeader(post);
       // スレッド情報
-    const { threadId } = useParams();
+    const threadId = props.id.threadId;
+    console.log(threadId);
+    //useParams();
     fetch(
-      "https://2y6i6tqn41.execute-api.ap-northeast-1.amazonaws.com/threads"
-      + threadId + "/posts",
-      header
+      "https://2y6i6tqn41.execute-api.ap-northeast-1.amazonaws.com/threads/"
+      + threadId + "/posts",header
     )
       .then((res) => res.json())
       .then((data) => {
@@ -62,10 +64,10 @@ function CreatePostContents() {
         <input
           type="text"
           value={post}
-          onChange={(e) => setTitle(e.target.value)}
+          onChange={(e) => setPost(e.target.value)}
         />
       </form>
-      <input type="button" value="投稿" onClick={sendPost} disabled={post.length === 0} />
+      <input type="button" value="投稿する" onClick={sendPost} disabled={post.length === 0} />
     </div>
   );
 }
