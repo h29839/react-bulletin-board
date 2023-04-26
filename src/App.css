@@ -2,12 +2,12 @@
   text-align: center;
 }
 .App-header {
-  color: #282c34;
+  color: #F288B9;
   text-align: left;
   padding-left: 2em;;
 }
 .App-body {
-  background-color: #282c34;
+  background-color: #F288B9;
   display: flex;
   min-height: 90vh;
   flex-direction: column;
@@ -18,10 +18,10 @@
 }
 a{
   text-decoration: none;
-  color: #fff;
+  color: #F288B9;
 }
 h1{
-  color:#282c34;
+  color: #F288B9;
 }
 /* スレッド */
 .Threads{
@@ -35,17 +35,21 @@ h1{
   width: 20em;
   overflow: auto;
   padding: 0.5em;
+  background-color: #fff;
+  border-radius: 0.2em;
 }
 .Thread{
-  border-bottom: 1px solid #999999;
+  border-bottom: 2px solid #F288B9;
   padding: 0.5em 0;
+}
+.Thread:hover{
+  background-color: rgba(219,113,112,.3);
+  color: #fff;
 }
 .Create-Thread{
   text-align: center;
 }
-.App-link {
-  color: #61dafb;
-}
+
 /* 投稿 */
 .Posts{
   text-align: left;
@@ -60,8 +64,36 @@ h1{
   padding: 0.5em;
 }
 .Post{
-  border-bottom: 1px solid #999999;
+  border-bottom: 1px solid #fff;
   padding: 0.5em 0;
+}
+.Create-Post{
+  text-align: center;
+}
+/* ボタン */
+.Button{
+  background-color: #F2CF66;
+  color: #fff;
+  border: none;
+  border-radius: 0.5em;
+  outline: none;
+  cursor: pointer;
+  padding: 0.5em;
+  margin: 1em;
+  appearance: none;
+  text-align: center;
+}
+.Button:hover{
+  background-color: #A68A35;
+}
+.Button:disabled{
+  background-color: #F2EDD6;
+}
+.Back-Button{
+  background-color: transparent;
+  border: none;
+  text-align: right;
+  cursor: pointer;
 }
 /* モーダル用 */
 #overlay{
