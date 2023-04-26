@@ -27,12 +27,11 @@ function Posts() {
     .catch((e) => {
       window.alert("エラーが発生しました：" + e);
     });
-  },[threadData]);
+  },[postsList,threadData]);
   
   return (
     <div className="Posts">
-      <p>{threadData.state.title}</p>
-      <p>投稿一覧</p>
+      <h2>{threadData.state.title}</h2>
       <ul className="Post-list">
         {
           postsList.map(postData=>
