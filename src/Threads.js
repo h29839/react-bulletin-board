@@ -31,11 +31,12 @@ function Threads(){
     {console.log("タイプ"+typeof threadsData)}
     {
      threadsData.map(thread=>
+      <Link to={{pathname : '/' + thread.id}} state={{ title: thread.title }}>
       <li className='Thread' key={thread.id}>
-        <Link to={{pathname : '/' + thread.id}} state={{ title: thread.title }}>
           {thread.title}
-        </Link>
       </li>
+      </Link>
+
      )
     }
    </ul>

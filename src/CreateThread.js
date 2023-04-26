@@ -10,7 +10,7 @@ function CreateThread() {
 
   return (
     <div className="Create-Thread">
-      <button onClick={openModal}>スレッド作成</button>
+      <button className="Button" onClick={openModal}>スレッド作成</button>
       <Modal show={showThreadModal} setShow={setShowThreadModal} content={<CreateThreadContents />}/>
     </div>
   );
@@ -61,7 +61,7 @@ function CreateThreadContents() {
           onChange={(e) => setTitle(e.target.value)}
         />
       </form>
-      <input type="button" value="作成" onClick={sendTitle} disabled={title.length === 0} />
+      <input type="button" className="Button" value="作成する" onClick={sendTitle} disabled={title.length === 0} />
     </div>
   );
 }

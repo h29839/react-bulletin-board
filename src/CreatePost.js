@@ -11,8 +11,8 @@ function CreatePost() {
   }
 
   return (
-    <div>
-      <button onClick={openModal}>投稿</button>
+    <div className='Create-Post'>
+      <button className='Button' onClick={openModal}>投稿</button>
       <Modal show={showPost} setShow={setShowPost} content={<CreatePostContents id={threadId} />}/>
     </div>
   );
@@ -67,7 +67,7 @@ function CreatePostContents(props) {
           onChange={(e) => setPost(e.target.value)}
         />
       </form>
-      <input type="button" value="投稿する" onClick={sendPost} disabled={post.length === 0} />
+      <input type="button" className='Button' value="投稿する" onClick={sendPost} disabled={post.length === 0} />
     </div>
   );
 }
