@@ -12,7 +12,7 @@ function App() {
           <main className="App-body">
           <Routes>
               <Route path="/" element={<Threads />} />
-              <Route path=":threadId" element={<Posts />} />
+              <Route path="/thread/:threadId" element={<Posts />} />
           </Routes>
           </main>
         </div>
