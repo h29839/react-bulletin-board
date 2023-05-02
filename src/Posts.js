@@ -11,7 +11,7 @@ function Posts() {
   useEffect(()=>{
     fetch(
       'https://2y6i6tqn41.execute-api.ap-northeast-1.amazonaws.com/threads/'
-      + threadData.pathname +
+      + threadData.state.id +
         '/posts?offset=0',
       {
         method: 'GET',
