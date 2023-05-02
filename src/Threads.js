@@ -23,7 +23,7 @@ function Threads(){
   }).catch((e)=>{
     window.alert("エラーが発生しました:",e);
   })
- },[]);
+ },[threadsData]);
  return (
   <div className='Threads'>
     <p>新着スレッド</p>
@@ -31,7 +31,7 @@ function Threads(){
     {console.log("タイプ"+typeof threadsData)}
     {
      threadsData.map(thread=>
-      <Link to={{pathname : '/' + thread.id}} state={{ title: thread.title }}>
+      <Link to={{pathname : '/thread/' + thread.id}} state={{ title: thread.title, id:thread.id }}>
       <li className='Thread' key={thread.id}>
           {thread.title}
       </li>
